@@ -13,8 +13,8 @@ struct RemindersApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            CategoriesListView()
+                .environmentObject(RemindersManager(context: persistenceController.container.viewContext))
         }
     }
 }

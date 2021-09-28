@@ -16,8 +16,13 @@
 		55761FE32702A64200DAB112 /* RemindersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55761FE22702A64200DAB112 /* RemindersTests.swift */; };
 		55761FED2702A64200DAB112 /* RemindersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55761FEC2702A64200DAB112 /* RemindersUITests.swift */; };
 		55761FEF2702A64200DAB112 /* RemindersUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55761FEE2702A64200DAB112 /* RemindersUITestsLaunchTests.swift */; };
-		55761FFD2702A8FE00DAB112 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55761FFB2702A8FE00DAB112 /* Category+CoreDataClass.swift */; };
-		55761FFE2702A8FE00DAB112 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55761FFC2702A8FE00DAB112 /* Category+CoreDataProperties.swift */; };
+		557620042702B71D00DAB112 /* RemindersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557620032702B71D00DAB112 /* RemindersManager.swift */; };
+		557620062702BD3F00DAB112 /* CategoriesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557620052702BD3F00DAB112 /* CategoriesListView.swift */; };
+		557620082702C08A00DAB112 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557620072702C08A00DAB112 /* AlertView.swift */; };
+		5576200D2702CA5A00DAB112 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557620092702CA5A00DAB112 /* Category+CoreDataClass.swift */; };
+		5576200E2702CA5A00DAB112 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5576200A2702CA5A00DAB112 /* Category+CoreDataProperties.swift */; };
+		5576200F2702CA5A00DAB112 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5576200B2702CA5A00DAB112 /* Item+CoreDataClass.swift */; };
+		557620102702CA5A00DAB112 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5576200C2702CA5A00DAB112 /* Item+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,8 +55,13 @@
 		55761FE82702A64200DAB112 /* RemindersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RemindersUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		55761FEC2702A64200DAB112 /* RemindersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersUITests.swift; sourceTree = "<group>"; };
 		55761FEE2702A64200DAB112 /* RemindersUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		55761FFB2702A8FE00DAB112 /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
-		55761FFC2702A8FE00DAB112 /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		557620032702B71D00DAB112 /* RemindersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersManager.swift; sourceTree = "<group>"; };
+		557620052702BD3F00DAB112 /* CategoriesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesListView.swift; sourceTree = "<group>"; };
+		557620072702C08A00DAB112 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		557620092702CA5A00DAB112 /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
+		5576200A2702CA5A00DAB112 /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		5576200B2702CA5A00DAB112 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
+		5576200C2702CA5A00DAB112 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,9 +112,10 @@
 		55761FCB2702A63E00DAB112 /* Reminders */ = {
 			isa = PBXGroup;
 			children = (
-				55761FFB2702A8FE00DAB112 /* Category+CoreDataClass.swift */,
-				55761FFC2702A8FE00DAB112 /* Category+CoreDataProperties.swift */,
 				55761FCC2702A63E00DAB112 /* RemindersApp.swift */,
+				557620002702B6CF00DAB112 /* Models */,
+				557620012702B6FB00DAB112 /* ViewModels */,
+				557620022702B70200DAB112 /* Views */,
 				55761FCE2702A63E00DAB112 /* ContentView.swift */,
 				55761FD02702A64200DAB112 /* Assets.xcassets */,
 				55761FD52702A64200DAB112 /* Persistence.swift */,
@@ -137,6 +148,34 @@
 				55761FEE2702A64200DAB112 /* RemindersUITestsLaunchTests.swift */,
 			);
 			path = RemindersUITests;
+			sourceTree = "<group>";
+		};
+		557620002702B6CF00DAB112 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				557620092702CA5A00DAB112 /* Category+CoreDataClass.swift */,
+				5576200A2702CA5A00DAB112 /* Category+CoreDataProperties.swift */,
+				5576200B2702CA5A00DAB112 /* Item+CoreDataClass.swift */,
+				5576200C2702CA5A00DAB112 /* Item+CoreDataProperties.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		557620012702B6FB00DAB112 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				557620032702B71D00DAB112 /* RemindersManager.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		557620022702B70200DAB112 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				557620052702BD3F00DAB112 /* CategoriesListView.swift */,
+				557620072702C08A00DAB112 /* AlertView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,11 +308,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5576200F2702CA5A00DAB112 /* Item+CoreDataClass.swift in Sources */,
+				557620062702BD3F00DAB112 /* CategoriesListView.swift in Sources */,
+				5576200E2702CA5A00DAB112 /* Category+CoreDataProperties.swift in Sources */,
+				5576200D2702CA5A00DAB112 /* Category+CoreDataClass.swift in Sources */,
+				557620042702B71D00DAB112 /* RemindersManager.swift in Sources */,
+				557620082702C08A00DAB112 /* AlertView.swift in Sources */,
 				55761FD62702A64200DAB112 /* Persistence.swift in Sources */,
-				55761FFE2702A8FE00DAB112 /* Category+CoreDataProperties.swift in Sources */,
 				55761FCF2702A63E00DAB112 /* ContentView.swift in Sources */,
 				55761FCD2702A63E00DAB112 /* RemindersApp.swift in Sources */,
-				55761FFD2702A8FE00DAB112 /* Category+CoreDataClass.swift in Sources */,
+				557620102702CA5A00DAB112 /* Item+CoreDataProperties.swift in Sources */,
 				55761FD92702A64200DAB112 /* Reminders.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
