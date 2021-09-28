@@ -16,6 +16,8 @@
 		55761FE32702A64200DAB112 /* RemindersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55761FE22702A64200DAB112 /* RemindersTests.swift */; };
 		55761FED2702A64200DAB112 /* RemindersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55761FEC2702A64200DAB112 /* RemindersUITests.swift */; };
 		55761FEF2702A64200DAB112 /* RemindersUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55761FEE2702A64200DAB112 /* RemindersUITestsLaunchTests.swift */; };
+		55761FFD2702A8FE00DAB112 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55761FFB2702A8FE00DAB112 /* Category+CoreDataClass.swift */; };
+		55761FFE2702A8FE00DAB112 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55761FFC2702A8FE00DAB112 /* Category+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		55761FE82702A64200DAB112 /* RemindersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RemindersUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		55761FEC2702A64200DAB112 /* RemindersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersUITests.swift; sourceTree = "<group>"; };
 		55761FEE2702A64200DAB112 /* RemindersUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		55761FFB2702A8FE00DAB112 /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
+		55761FFC2702A8FE00DAB112 /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,8 @@
 		55761FCB2702A63E00DAB112 /* Reminders */ = {
 			isa = PBXGroup;
 			children = (
+				55761FFB2702A8FE00DAB112 /* Category+CoreDataClass.swift */,
+				55761FFC2702A8FE00DAB112 /* Category+CoreDataProperties.swift */,
 				55761FCC2702A63E00DAB112 /* RemindersApp.swift */,
 				55761FCE2702A63E00DAB112 /* ContentView.swift */,
 				55761FD02702A64200DAB112 /* Assets.xcassets */,
@@ -264,8 +270,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				55761FD62702A64200DAB112 /* Persistence.swift in Sources */,
+				55761FFE2702A8FE00DAB112 /* Category+CoreDataProperties.swift in Sources */,
 				55761FCF2702A63E00DAB112 /* ContentView.swift in Sources */,
 				55761FCD2702A63E00DAB112 /* RemindersApp.swift in Sources */,
+				55761FFD2702A8FE00DAB112 /* Category+CoreDataClass.swift in Sources */,
 				55761FD92702A64200DAB112 /* Reminders.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
