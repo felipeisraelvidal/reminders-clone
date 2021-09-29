@@ -20,7 +20,7 @@ struct InputItemCell: View {
                 .foregroundColor(isCompleted ? .red : Color(.lightGray))
                 .onTapGesture(perform: { isCompleted.toggle() })
             
-            TextField("", text: $name, onEditingChanged: { _ in }, onCommit: {
+            TextField("Enter the item name", text: $name, onEditingChanged: { _ in }, onCommit: {
                 onCommit(name, isCompleted)
                 name = ""
                 isCompleted = false

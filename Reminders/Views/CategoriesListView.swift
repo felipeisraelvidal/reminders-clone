@@ -10,48 +10,37 @@ import SwiftUI
 struct CategoriesListView: View {
     @EnvironmentObject private var manager: RemindersManager
     
-    @State private var isShowingAlert = false
     @State private var textEntered = ""
     
     @State private var isShowingNoDeleteAlert = false
+    @State private var isCreatingNewCategory = false
     
     var body: some View {
         NavigationView {
-            ZStack {
-                List {
-                    ForEach(manager.categories, id: \.id) { category in
-                        NavigationLink(
-                            destination: ItemsListView(category: category)
-                        ) {
-                            HStack {
-                                Text(category.name)
-                                
-                                Spacer(minLength: 0)
-                                
-                                Text("\(category.items?.count ?? 0)")
-                                    .foregroundColor(.secondary)
-                            }
+            List {
+                ForEach(manager.categories, id: \.id) { category in
+                    NavigationLink(
+                        destination: ItemsListView(category: category)
+                    ) {
+                        HStack {
+                            Text(category.name)
+                            
+                            Spacer(minLength: 0)
+                            
+                            Text("\(category.items?.count ?? 0)")
+                                .foregroundColor(.secondary)
                         }
                     }
-                    .onDelete(perform: removeRow(at:))
                 }
-                .listStyle(InsetGroupedListStyle())
-                
-                if isShowingAlert {
-                    AlertView(text: $textEntered, isShowingAlert: $isShowingAlert)
-                        .onDisappear {
-                            if !textEntered.isEmpty {
-                                manager.saveCategory(name: textEntered)
-                            }
-                        }
-                }
+                .onDelete(perform: removeRow(at:))
             }
+            .listStyle(InsetGroupedListStyle())
             .navigationBarTitle("Categories")
             .toolbar {
                 ToolbarItemGroup(placement: .bottomBar) {
                     Button(action: {
                         withAnimation(.spring()) {
-                            isShowingAlert.toggle()
+                            isCreatingNewCategory.toggle()
                         }
                     }) {
                         Image(systemName: "plus.circle.fill")
@@ -60,10 +49,14 @@ struct CategoriesListView: View {
                             .font(.system(.body, design: .rounded))
                             .fontWeight(.semibold)
                     }
-                    .opacity(isShowingAlert ? 0 : 1)
                     
                     Spacer()
                 }
+            }
+            .sheet(isPresented: $isCreatingNewCategory) {
+                CreateCategoryView(onCreate: { name in
+                    manager.saveCategory(name: name)
+                })
             }
             .alert(isPresented: $isShowingNoDeleteAlert) {
                 Alert(
