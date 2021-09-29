@@ -20,6 +20,7 @@ extension Item {
     @NSManaged public var name: String
     @NSManaged public var isCompleted: Bool
     @NSManaged public var category: Category
+    @NSManaged public var createdAt: Date?
 
 }
 

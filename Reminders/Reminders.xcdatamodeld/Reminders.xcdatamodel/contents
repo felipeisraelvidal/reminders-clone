@@ -6,13 +6,14 @@
         <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Item" inverseName="category" inverseEntity="Item"/>
     </entity>
     <entity name="Item" representedClassName="Item" syncable="YES">
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="isCompleted" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="items" inverseEntity="Category"/>
     </entity>
     <elements>
-        <element name="Item" positionX="-17.309814453125" positionY="-199.7363586425781" width="128" height="103"/>
         <element name="Category" positionX="-63" positionY="-9" width="128" height="74"/>
+        <element name="Item" positionX="-17.309814453125" positionY="-199.7363586425781" width="128" height="118"/>
     </elements>
 </model>

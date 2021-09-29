@@ -66,6 +66,19 @@ extension RemindersManager {
         context.delete(category)
         save()
     }
+    
+    func canDelete(_ category: Category) -> Bool {
+        let request: NSFetchRequest<Item> = Item.fetchRequest()
+        request.predicate = NSPredicate(format: "%K = %@", #keyPath(Item.category), category)
+        
+        do {
+            return try context.fetch(request).isEmpty
+        } catch {
+            assertionFailure()
+        }
+        
+        return false
+    }
 }
 
 // MARK: - Item
@@ -80,7 +93,7 @@ extension RemindersManager {
         let request: NSFetchRequest<Item> = Item.fetchRequest()
         request.predicate = NSPredicate(format: "%K = %@", #keyPath(Item.category), category)
         request.sortDescriptors = [
-            NSSortDescriptor(keyPath: \Item.name, ascending: true)
+            NSSortDescriptor(keyPath: \Item.createdAt, ascending: true)
         ]
         
         do {
@@ -91,7 +104,18 @@ extension RemindersManager {
         }
     }
     
-    func saveItem(){
+    func createNewItem(name: String, isCompleted: Bool, category: Category) {
+        let newItem = Item(context: context)
+        newItem.id = UUID()
+        newItem.name = name
+        newItem.isCompleted = isCompleted
+        newItem.category = category
+        newItem.createdAt = Date()
+        
+        saveItem()
+    }
+    
+    func saveItem() {
         context.performAndWait {
             save()
         }
