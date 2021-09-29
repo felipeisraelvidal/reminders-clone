@@ -52,6 +52,7 @@
 		55044E4F2703CA2F0021B0E3 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		55044E512703E3680021B0E3 /* InputItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputItemCell.swift; sourceTree = "<group>"; };
 		55044E532703F9340021B0E3 /* CreateCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategoryView.swift; sourceTree = "<group>"; };
+		55044E552703FEB80021B0E3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		55761FC92702A63E00DAB112 /* Reminders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reminders.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55761FCC2702A63E00DAB112 /* RemindersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersApp.swift; sourceTree = "<group>"; };
 		55761FCE2702A63E00DAB112 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -100,6 +101,7 @@
 		55761FC02702A63E00DAB112 = {
 			isa = PBXGroup;
 			children = (
+				55044E552703FEB80021B0E3 /* README.md */,
 				55761FCB2702A63E00DAB112 /* Reminders */,
 				55761FE12702A64200DAB112 /* RemindersTests */,
 				55761FEB2702A64200DAB112 /* RemindersUITests */,
