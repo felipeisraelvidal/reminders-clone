@@ -12,7 +12,6 @@ struct CategoriesListView: View {
     
     @State private var textEntered = ""
     
-    @State private var isShowingNoDeleteAlert = false
     @State private var isCreatingNewCategory = false
     
     var body: some View {
@@ -58,25 +57,13 @@ struct CategoriesListView: View {
                     manager.saveCategory(name: name)
                 })
             }
-            .alert(isPresented: $isShowingNoDeleteAlert) {
-                Alert(
-                    title: Text("Delete Failed"),
-                    message: Text("There are items currently attached to this category."),
-                    dismissButton: .cancel(Text("OK"))
-                )
-            }
         }
     }
     
     private func removeRow(at offsets: IndexSet) {
         for offset in offsets {
             let category = manager.categories[offset]
-            
-            if manager.canDelete(category) {
-                manager.delete(category)
-            } else {
-                isShowingNoDeleteAlert = true
-            }
+            manager.delete(category)
         }
     }
 }

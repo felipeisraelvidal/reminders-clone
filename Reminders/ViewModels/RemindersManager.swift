@@ -66,19 +66,6 @@ extension RemindersManager {
         context.delete(category)
         save()
     }
-    
-    func canDelete(_ category: Category) -> Bool {
-        let request: NSFetchRequest<Item> = Item.fetchRequest()
-        request.predicate = NSPredicate(format: "%K = %@", #keyPath(Item.category), category)
-        
-        do {
-            return try context.fetch(request).isEmpty
-        } catch {
-            assertionFailure()
-        }
-        
-        return false
-    }
 }
 
 // MARK: - Item
